@@ -7,9 +7,7 @@ import {bindAll} from '../../util/util';
 import type Map from '../map';
 
 /**
- * A `LogoControl` is a control that adds the Mapbox watermark
- * to the map as required by the [terms of service](https://www.mapbox.com/tos/) for Mapbox
- * vector tiles and core styles.
+ * A `LogoControl` is a control that adds the watermark.
  *
  * @implements {IControl}
  * @private
@@ -26,11 +24,11 @@ class LogoControl {
 
     onAdd(map: Map) {
         this._map = map;
-        this._container = DOM.create('div', 'mapboxgl-ctrl');
-        const anchor = DOM.create('a', 'mapboxgl-ctrl-logo');
+        this._container = DOM.create('div', 'maplibregl-ctrl mapboxgl-ctrl');
+        const anchor = DOM.create('a', 'maplibregl-ctrl-logo mapboxgl-ctrl-logo');
         anchor.target = "_blank";
         anchor.rel = "noopener nofollow";
-        anchor.href = "https://www.mapbox.com/";
+        anchor.href = "https://maplibre.org/";
         anchor.setAttribute("aria-label", this._map._getUIString('LogoControl.Title'));
         anchor.setAttribute("rel", "noopener nofollow");
         this._container.appendChild(anchor);
@@ -80,9 +78,9 @@ class LogoControl {
         if (containerChildren.length) {
             const anchor = containerChildren[0];
             if (this._map.getCanvasContainer().offsetWidth < 250) {
-                anchor.classList.add('mapboxgl-compact');
+                anchor.classList.add('maplibregl-compact', 'mapboxgl-compact');
             } else {
-                anchor.classList.remove('mapboxgl-compact');
+                anchor.classList.remove('maplibregl-compact', 'mapboxgl-compact');
             }
         }
     }

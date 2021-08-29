@@ -1,5 +1,9 @@
 Hi, and thanks in advance for contributing to MapLibre GL. Here's how we work. Please follow these conventions when submitting an issue or pull request.
 
+## Do not violate Mapbox copyright!
+In December 2020 Mapbox decided to publish future versions of mapbox-gl-js under a proprietary license. **You are not allowed to backport code from Mapbox projects which has been contributed under this new license**. Unauthorized backports are the biggest threat to the MapLibre project. If you are unsure about this issue, [please ask](https://github.com/maplibre/maplibre-gl-js/discussions)!
+
+
 ## Preparing your Development Environment
 
 ### OSX
@@ -31,10 +35,20 @@ yarn install
 
 ### Linux
 
-Install [git](https://git-scm.com/), [node.js](https://nodejs.org/) (version ^10.15), [GNU Make](http://www.gnu.org/software/make/), and libglew-dev
+Install [git](https://git-scm.com/), [GNU Make](http://www.gnu.org/software/make/), and libglew-dev
 ```bash
 sudo apt-get update &&
-sudo apt-get install build-essential git nodejs libglew-dev libxi-dev
+sudo apt-get install build-essential git libglew-dev libxi-dev default-jre default-jdk
+```
+
+Install [nvm](https://github.com/nvm-sh/nvm)
+```bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+```
+
+Install [Node.js](https://nodejs.org/) ^10.15
+```
+nvm install 10.24.1 # latest v10 version that will run the test suite
 ```
 
 Install [yarn](https://yarnpkg.com/en/docs/install#linux-tab)
