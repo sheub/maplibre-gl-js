@@ -227,17 +227,17 @@ declare namespace mapboxgl {
 
         getMaxZoom(): number;
 
-        setMinPitch(minPitch?: number | null): this;
+        // setMinPitch(minPitch?: number | null): this;
 
-        getMinPitch(): number;
+        // getMinPitch(): number;
 
-        setMaxPitch(maxPitch?: number | null): this;
+        // setMaxPitch(maxPitch?: number | null): this;
 
-        getMaxPitch(): number;
+        // getMaxPitch(): number;
 
-        getRenderWorldCopies(): boolean;
+        // getRenderWorldCopies(): boolean;
 
-        setRenderWorldCopies(renderWorldCopies?: boolean): this;
+        // setRenderWorldCopies(renderWorldCopies?: boolean): this;
 
         project(lnglat: LngLatLike): mapboxgl.Point;
 
@@ -355,12 +355,12 @@ declare namespace mapboxgl {
 
         getLight(): mapboxgl.Light;
 
-        setFeatureState(
-            feature: FeatureIdentifier | mapboxgl.MapboxGeoJSONFeature,
-            state: { [key: string]: any },
-        ): void;
+        // setFeatureState(
+        //     feature: FeatureIdentifier | mapboxgl.MapboxGeoJSONFeature,
+        //     state: { [key: string]: any },
+        // ): void;
 
-        getFeatureState(feature: FeatureIdentifier | mapboxgl.MapboxGeoJSONFeature): { [key: string]: any };
+        // getFeatureState(feature: FeatureIdentifier | mapboxgl.MapboxGeoJSONFeature): { [key: string]: any };
 
         removeFeatureState(target: FeatureIdentifier | mapboxgl.MapboxGeoJSONFeature, key?: string): void;
 
@@ -440,19 +440,19 @@ declare namespace mapboxgl {
          */
         setPadding(padding: PaddingOptions, eventData?: EventData): this;
 
-        rotateTo(bearing: number, options?: mapboxgl.AnimationOptions, eventData?: EventData): this;
+        // rotateTo(bearing: number, options?: mapboxgl.AnimationOptions, eventData?: EventData): this;
 
-        resetNorth(options?: mapboxgl.AnimationOptions, eventData?: mapboxgl.EventData): this;
+        // resetNorth(options?: mapboxgl.AnimationOptions, eventData?: mapboxgl.EventData): this;
 
-        resetNorthPitch(options?: mapboxgl.AnimationOptions | null, eventData?: mapboxgl.EventData | null): this;
+        // resetNorthPitch(options?: mapboxgl.AnimationOptions | null, eventData?: mapboxgl.EventData | null): this;
 
-        snapToNorth(options?: mapboxgl.AnimationOptions, eventData?: mapboxgl.EventData): this;
+        // snapToNorth(options?: mapboxgl.AnimationOptions, eventData?: mapboxgl.EventData): this;
 
-        getPitch(): number;
+        // getPitch(): number;
 
-        setPitch(pitch: number, eventData?: EventData): this;
+        // setPitch(pitch: number, eventData?: EventData): this;
 
-        cameraForBounds(bounds: LngLatBoundsLike, options?: CameraForBoundsOptions): CameraForBoundsResult | undefined;
+        // cameraForBounds(bounds: LngLatBoundsLike, options?: CameraForBoundsOptions): CameraForBoundsResult | undefined;
 
         fitBounds(bounds: LngLatBoundsLike, options?: mapboxgl.FitBoundsOptions, eventData?: mapboxgl.EventData): this;
 
@@ -932,12 +932,12 @@ declare namespace mapboxgl {
         getDefaultPosition?: () => string;
     }
 
-    /**
-     * Navigation
-     */
-    export class NavigationControl extends Control {
-        constructor(options?: { showCompass?: boolean; showZoom?: boolean; visualizePitch?: boolean });
-    }
+    // /**
+    //  * Navigation
+    //  */
+    // export class NavigationControl extends Control {
+    //     constructor(options?: { showCompass?: boolean; showZoom?: boolean; visualizePitch?: boolean });
+    // }
 
     export class PositionOptions {
         enableHighAccuracy?: boolean;
@@ -945,19 +945,19 @@ declare namespace mapboxgl {
         maximumAge?: number;
     }
 
-    /**
-     * Geolocate
-     */
-    export class GeolocateControl extends Control {
-        constructor(options?: {
-            positionOptions?: PositionOptions;
-            fitBoundsOptions?: FitBoundsOptions;
-            trackUserLocation?: boolean;
-            showAccuracyCircle?: boolean;
-            showUserLocation?: boolean;
-        });
-        trigger(): boolean;
-    }
+    // /**
+    //  * Geolocate
+    //  */
+    // export class GeolocateControl extends Control {
+    //     constructor(options?: {
+    //         positionOptions?: PositionOptions;
+    //         fitBoundsOptions?: FitBoundsOptions;
+    //         trackUserLocation?: boolean;
+    //         showAccuracyCircle?: boolean;
+    //         showUserLocation?: boolean;
+    //     });
+    //     trigger(): boolean;
+    // }
 
     /**
      * Attribution
@@ -966,113 +966,113 @@ declare namespace mapboxgl {
         constructor(options?: { compact?: boolean; customAttribution?: string | string[] });
     }
 
-    /**
-     * Scale
-     */
-    export class ScaleControl extends Control {
-        constructor(options?: { maxWidth?: number; unit?: string });
+    // /**
+    //  * Scale
+    //  */
+    // export class ScaleControl extends Control {
+    //     constructor(options?: { maxWidth?: number; unit?: string });
 
-        setUnit(unit: 'imperial' | 'metric' | 'nautical'): void;
-    }
+    //     setUnit(unit: 'imperial' | 'metric' | 'nautical'): void;
+    // }
 
-    /**
-     * FullscreenControl
-     */
-    export class FullscreenControl extends Control {
-        constructor(options?: FullscreenControlOptions | null);
-    }
+    // /**
+    //  * FullscreenControl
+    //  */
+    // export class FullscreenControl extends Control {
+    //     constructor(options?: FullscreenControlOptions | null);
+    // }
 
-    export interface FullscreenControlOptions {
-        /**
-         * A compatible DOM element which should be made full screen.
-         * By default, the map container element will be made full screen.
-         */
-        container?: HTMLElement | null;
-    }
+    // export interface FullscreenControlOptions {
+    //     /**
+    //      * A compatible DOM element which should be made full screen.
+    //      * By default, the map container element will be made full screen.
+    //      */
+    //     container?: HTMLElement | null;
+    // }
 
     /**
      * Popup
      */
-    export class Popup extends Evented {
-        constructor(options?: mapboxgl.PopupOptions);
+    // export class Popup extends Evented {
+    //     constructor(options?: mapboxgl.PopupOptions);
 
-        addTo(map: mapboxgl.Map): this;
+    //     addTo(map: mapboxgl.Map): this;
 
-        isOpen(): boolean;
+    //     isOpen(): boolean;
 
-        remove(): this;
+    //     remove(): this;
 
-        getLngLat(): mapboxgl.LngLat;
+    //     getLngLat(): mapboxgl.LngLat;
 
-        /**
-         * Sets the geographical location of the popup's anchor, and moves the popup to it. Replaces trackPointer() behavior.
-         *
-         * @param lnglat The geographical location to set as the popup's anchor.
-         */
-        setLngLat(lnglat: LngLatLike): this;
+    //     /**
+    //      * Sets the geographical location of the popup's anchor, and moves the popup to it. Replaces trackPointer() behavior.
+    //      *
+    //      * @param lnglat The geographical location to set as the popup's anchor.
+    //      */
+    //     setLngLat(lnglat: LngLatLike): this;
 
-        /**
-         * Tracks the popup anchor to the cursor position, on screens with a pointer device (will be hidden on touchscreens). Replaces the setLngLat behavior.
-         * For most use cases, `closeOnClick` and `closeButton` should also be set to `false` here.
-         */
-        trackPointer(): this;
+    //     /**
+    //      * Tracks the popup anchor to the cursor position, on screens with a pointer device (will be hidden on touchscreens). Replaces the setLngLat behavior.
+    //      * For most use cases, `closeOnClick` and `closeButton` should also be set to `false` here.
+    //      */
+    //     trackPointer(): this;
 
-        /** Returns the `Popup`'s HTML element. */
-        getElement(): HTMLElement;
+    //     /** Returns the `Popup`'s HTML element. */
+    //     getElement(): HTMLElement;
 
-        setText(text: string): this;
+    //     setText(text: string): this;
 
-        setHTML(html: string): this;
+    //     setHTML(html: string): this;
 
-        setDOMContent(htmlNode: Node): this;
+    //     setDOMContent(htmlNode: Node): this;
 
-        getMaxWidth(): string;
+    //     getMaxWidth(): string;
 
-        setMaxWidth(maxWidth: string): this;
+    //     setMaxWidth(maxWidth: string): this;
 
-        /**
-         * Adds a CSS class to the popup container element.
-         *
-         * @param {string} className Non-empty string with CSS class name to add to popup container
-         *
-         * @example
-         * let popup = new mapboxgl.Popup()
-         * popup.addClassName('some-class')
-         */
-        addClassName(className: string): void;
+    //     /**
+    //      * Adds a CSS class to the popup container element.
+    //      *
+    //      * @param {string} className Non-empty string with CSS class name to add to popup container
+    //      *
+    //      * @example
+    //      * let popup = new mapboxgl.Popup()
+    //      * popup.addClassName('some-class')
+    //      */
+    //     addClassName(className: string): void;
 
-        /**
-         * Removes a CSS class from the popup container element.
-         *
-         * @param {string} className Non-empty string with CSS class name to remove from popup container
-         *
-         * @example
-         * let popup = new mapboxgl.Popup()
-         * popup.removeClassName('some-class')
-         */
-        removeClassName(className: string): void;
+    //     /**
+    //      * Removes a CSS class from the popup container element.
+    //      *
+    //      * @param {string} className Non-empty string with CSS class name to remove from popup container
+    //      *
+    //      * @example
+    //      * let popup = new mapboxgl.Popup()
+    //      * popup.removeClassName('some-class')
+    //      */
+    //     removeClassName(className: string): void;
 
-        /**
-         * Sets the popup's offset.
-         *
-         * @param offset Sets the popup's offset.
-         * @returns {Popup} `this`
-         */
-        setOffset(offset?: Offset | null): this;
+    //     /**
+    //      * Sets the popup's offset.
+    //      *
+    //      * @param offset Sets the popup's offset.
+    //      * @returns {Popup} `this`
+    //      */
+    //     setOffset(offset?: Offset | null): this;
 
-        /**
-         * Add or remove the given CSS class on the popup container, depending on whether the container currently has that class.
-         *
-         * @param {string} className Non-empty string with CSS class name to add/remove
-         *
-         * @returns {boolean} if the class was removed return false, if class was added, then return true
-         *
-         * @example
-         * let popup = new mapboxgl.Popup()
-         * popup.toggleClassName('toggleClass')
-         */
-        toggleClassName(className: string): boolean;
-    }
+    //     /**
+    //      * Add or remove the given CSS class on the popup container, depending on whether the container currently has that class.
+    //      *
+    //      * @param {string} className Non-empty string with CSS class name to add/remove
+    //      *
+    //      * @returns {boolean} if the class was removed return false, if class was added, then return true
+    //      *
+    //      * @example
+    //      * let popup = new mapboxgl.Popup()
+    //      * popup.toggleClassName('toggleClass')
+    //      */
+    //     toggleClassName(className: string): boolean;
+    // }
 
     export interface PopupOptions {
         closeButton?: boolean;
@@ -1328,17 +1328,17 @@ declare namespace mapboxgl {
         promoteId?: PromoteIdSpecification;
     }
 
-    interface RasterSource extends Source {
-        type: 'raster';
-        url?: string;
-        tiles?: string[];
-        bounds?: number[];
-        minzoom?: number;
-        maxzoom?: number;
-        tileSize?: number;
-        scheme?: 'xyz' | 'tms';
-        attribution?: string;
-    }
+    // interface RasterSource extends Source {
+    //     type: 'raster';
+    //     url?: string;
+    //     tiles?: string[];
+    //     bounds?: number[];
+    //     minzoom?: number;
+    //     maxzoom?: number;
+    //     tileSize?: number;
+    //     scheme?: 'xyz' | 'tms';
+    //     attribution?: string;
+    // }
 
     interface RasterDemSource extends Source {
         type: 'raster-dem';
