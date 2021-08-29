@@ -396,21 +396,12 @@ declare namespace maplibregl {
 
         getLight(): maplibregl.Light;
 
-<<<<<<< HEAD
         // setFeatureState(
-        //     feature: FeatureIdentifier | mapboxgl.MapboxGeoJSONFeature,
+        //     feature: FeatureIdentifier | maplibregl.MapboxGeoJSONFeature,
         //     state: { [key: string]: any },
         // ): void;
 
-        // getFeatureState(feature: FeatureIdentifier | mapboxgl.MapboxGeoJSONFeature): { [key: string]: any };
-=======
-        setFeatureState(
-            feature: FeatureIdentifier | maplibregl.MapboxGeoJSONFeature,
-            state: { [key: string]: any },
-        ): void;
-
-        getFeatureState(feature: FeatureIdentifier | maplibregl.MapboxGeoJSONFeature): { [key: string]: any };
->>>>>>> 9bb503638bf9c13c08b94b5b4365dbaf94acb28d
+        // getFeatureState(feature: FeatureIdentifier | maplibregl.MapboxGeoJSONFeature): { [key: string]: any };
 
         removeFeatureState(target: FeatureIdentifier | maplibregl.MapboxGeoJSONFeature, key?: string): void;
 
@@ -490,23 +481,13 @@ declare namespace maplibregl {
          */
         setPadding(padding: RequireAtLeastOne<PaddingOptions>, eventData?: EventData): this;
 
-<<<<<<< HEAD
-        // rotateTo(bearing: number, options?: mapboxgl.AnimationOptions, eventData?: EventData): this;
+        // rotateTo(bearing: number, options?: maplibregl.AnimationOptions, eventData?: EventData): this;
 
-        // resetNorth(options?: mapboxgl.AnimationOptions, eventData?: mapboxgl.EventData): this;
+        // resetNorth(options?: maplibregl.AnimationOptions, eventData?: maplibregl.EventData): this;
 
-        // resetNorthPitch(options?: mapboxgl.AnimationOptions | null, eventData?: mapboxgl.EventData | null): this;
+        // resetNorthPitch(options?: maplibregl.AnimationOptions | null, eventData?: maplibregl.EventData | null): this;
 
-        // snapToNorth(options?: mapboxgl.AnimationOptions, eventData?: mapboxgl.EventData): this;
-=======
-        rotateTo(bearing: number, options?: maplibregl.AnimationOptions, eventData?: EventData): this;
-
-        resetNorth(options?: maplibregl.AnimationOptions, eventData?: maplibregl.EventData): this;
-
-        resetNorthPitch(options?: maplibregl.AnimationOptions | null, eventData?: maplibregl.EventData | null): this;
-
-        snapToNorth(options?: maplibregl.AnimationOptions, eventData?: maplibregl.EventData): this;
->>>>>>> 9bb503638bf9c13c08b94b5b4365dbaf94acb28d
+        // snapToNorth(options?: maplibregl.AnimationOptions, eventData?: maplibregl.EventData): this;
 
         // getPitch(): number;
 
