@@ -1,5 +1,5 @@
 import {test} from '../../util/test';
-import {CanonicalTileID, OverscaledTileID} from '../../../src/source/tile_id';
+import {CanonicalTileID, OverscaledTileID} from '../../../rollup/build/tsc/source/tile_id';
 
 test('CanonicalTileID', (t) => {
     t.test('#constructor', (t) => {
@@ -38,7 +38,7 @@ test('CanonicalTileID', (t) => {
 
     t.test('.url', (t) => {
         t.test('replaces {z}/{x}/{y}', (t) => {
-            t.equal(new CanonicalTileID(1, 0, 0).url(['{z}/{x}/{y}.json']), '1/0/0.json');
+            t.equal(new CanonicalTileID(2, 1, 0).url(['{z}/{x}/{y}.json']), '2/1/0.json');
             t.end();
         });
 
@@ -49,7 +49,7 @@ test('CanonicalTileID', (t) => {
             t.equal(new CanonicalTileID(17, 22914, 52870).url(['quadkey={quadkey}']), 'quadkey=02301322130000230');
 
             // Test case confirmed by quadkeytools package
-            // https://bitbucket.org/steele/quadkeytools/src/master/test/quadkey.js?fileviewer=file-view-default#quadkey.js-57
+            // https://bitbucket.org/steele/quadkeytools/rollup/build/tsc/master/test/quadkey.js?fileviewer=file-view-default#quadkey.js-57
             t.equal(new CanonicalTileID(6, 29, 3).url(['quadkey={quadkey}']), 'quadkey=011123');
 
             t.end();
@@ -57,6 +57,12 @@ test('CanonicalTileID', (t) => {
 
         t.test('replaces {bbox-epsg-3857}', (t) => {
             t.equal(new CanonicalTileID(1, 0, 0).url(['bbox={bbox-epsg-3857}']), 'bbox=-20037508.342789244,0,0,20037508.342789244');
+            t.end();
+        });
+
+        //Tests that multiple values of the same placeholder are replaced.
+        t.test('replaces {z}/{x}/{y}/{z}/{x}/{y}', (t) => {
+            t.equal(new CanonicalTileID(2, 1, 0).url(['{z}/{x}/{y}/{z}/{x}/{y}.json']), '2/1/0/2/1/0.json');
             t.end();
         });
 

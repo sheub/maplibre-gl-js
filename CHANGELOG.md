@@ -8,6 +8,23 @@
 
 - *...Add new stuff here...*
 
+## 2.0.0
+
+### Features and improvements
+
+- Migrated the production code to typescript
+- ** Breaking Change ** removed `version` from the public API
+- ** Breaking Change ** stopped supporting IE (internet explorer)
+- ** Breaking Change ** removed all code related to `accessToken` and mapbox specific urls, including telemetry etc.  Please do not use mapbox servers with this library.
+- ** Breaking Change ** removed `baseApiUrl` as it was used only for mapbox related urls
+- Added redraw function to map (#206)
+- *...Add new stuff here...*
+
+### 🐞 Bug fixes
+
+- Fix warning due to strict comparison of SDF property in image sprite (#303)
+- Fix tile placeholder replacement to allow for placeholders to be in a URL more than once. (#348)
+
 ## 1.15.2
 
 ### 🐞 Bug fixes
